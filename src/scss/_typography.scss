@@ -1,0 +1,69 @@
+
+
+
+h3 {
+    font-size: 20px;
+    color: $color-secondary;
+    font-weight: 700;
+    margin-bottom: .6em;
+
+    @media (max-width: $bp-small) {
+        font-size: 16px;
+        margin-bottom: 10px;
+
+    }
+}
+h4  {
+    font-size: 16px;
+    color: $color-dark;
+    font-weight: 700;
+    margin-bottom: .9em;
+    @media (max-width: $bp-small) {
+        font-size: 14px;
+        
+    }
+
+
+}
+
+p {
+    
+    margin-bottom: 1.2em;
+    
+}
+
+
+
+a {
+
+    text-decoration: none;
+    color: inherit;
+    &:hover {
+        color: $color-secondary;
+    }
+
+}
+
+.btn {
+    padding: 12px 45px;
+    background-color: $color-primary;
+    color: #ffffff;
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 20px 0;
+    border: 2px solid $color-primary;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #ffffff;
+        color: $color-primary;
+        border: 2px solid $color-primary;
+        
+    }
+
+    @media (max-width: $bp-small) {
+        font-size: 16px;
+        padding: 8px 35px;
+    }
+}

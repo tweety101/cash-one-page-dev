@@ -1,0 +1,52 @@
+.strategy {
+  background-color: rgba($color: $color-primary, $alpha: 0.25);
+
+  &__content {
+    display: flex;
+    flex-basis: 0;
+    @media (max-width: $bp-small) {
+      flex-direction: column;
+    }
+}
+
+  &__left {
+    flex: 1 0 300px;
+    
+    @media (max-width: $bp-small) {
+      flex: auto;
+    }
+
+  }
+
+  &__right {
+    flex: 1 0 300px;
+    
+    padding-left: 100px;
+
+    @media (max-width: $bp-medium) {
+      padding-left: 30px;
+    }
+    @media (max-width: $bp-small) {
+      padding-top: 20px;
+      padding-left: 0;
+      flex: auto;
+    }
+
+    h3 {
+      color: $color-primary;
+
+    }
+
+  }
+
+  &__links {
+    list-style: none;
+    font-weight: 700;
+  }
+
+  &__link {
+    margin-bottom: .3em;
+
+    
+  }
+}

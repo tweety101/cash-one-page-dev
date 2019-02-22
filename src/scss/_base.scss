@@ -1,0 +1,51 @@
+
+
+
+$color-primary: #62A8E5;
+$color-secondary: #B75856;
+$color-dark: #3C3C3C;
+$color-white: #ffffff;
+
+$color-background-light: #BFBFBF;
+$color-background-dark: #565453;
+
+
+$bp-large: 1100px;
+$bp-medium: 840px;
+$bp-small: 700px;
+$bp-smallest: 500px;
+
+$font-family: 'Roboto', sans-serif;
+
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+    transition: .2s all;
+
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+
+    
+    
+
+
+}
+
+body {
+    font-family: $font-family;
+    color: $color-dark;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6em;
+    @media (max-width: $bp-small) {
+        font-size: 12px;
+        
+    }
+}

@@ -1,0 +1,38 @@
+.hero {
+    margin-top: 150px;
+
+    background: 
+    // color overlay
+    linear-gradient(
+        rgba(60, 60, 60, .56),
+        rgba(60, 60, 60, .56)
+    ),
+    // bottom image
+    url('images/hero-desktop.jpg');
+
+    height: calc(100vh - 150px);
+    max-height: 617px;
+    position: relative;
+
+    @media(max-width: $bp-medium) {
+        margin-top: 100px;
+        height: 350px;
+    }
+   
+
+    &__title {
+        width: 90%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: center;
+        font-size: 30px;
+        font-weight: 700;
+
+        @media(max-width: $bp-medium) {
+            font-size: 20px;
+        }
+    }
+}
