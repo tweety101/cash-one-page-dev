@@ -28,7 +28,8 @@
     height: 352px;
 
     @media (max-width: $bp-small) {
-      height: 200px;
+      max-height: 200px;
+      min-height: 200px;
     }
 
     img {
