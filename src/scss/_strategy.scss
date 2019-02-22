@@ -10,8 +10,11 @@
 }
 
   &__left {
-    flex: 1 0 300px;
-    
+    flex: 0 1 733px;
+    padding-right: 112px;
+    @media (max-width: $bp-medium) {
+      padding-right: 30px;
+    }
     @media (max-width: $bp-small) {
       flex: auto;
     }
@@ -19,12 +22,12 @@
   }
 
   &__right {
-    flex: 1 0 300px;
+    flex: 0 1 367px;
     
-    padding-left: 100px;
+    
 
     @media (max-width: $bp-medium) {
-      padding-left: 30px;
+
     }
     @media (max-width: $bp-small) {
       padding-top: 20px;
@@ -41,6 +44,7 @@
 
   &__links {
     list-style: none;
+    font-family: $font-family-bold;
     font-weight: 700;
   }
 

@@ -3,18 +3,17 @@
 
     background: 
     // color overlay
-    linear-gradient(
-        rgba(60, 60, 60, .56),
-        rgba(60, 60, 60, .56)
-    ),
+
     // bottom image
     url('images/hero-desktop.jpg');
-
-    height: calc(100vh - 150px);
-    max-height: 617px;
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    height: 730px;
     position: relative;
 
-    @media(max-width: $bp-medium) {
+    @media(max-width: $bp-small) {
+        background-size: 100% auto;
         margin-top: 100px;
         height: 350px;
     }
@@ -23,10 +22,10 @@
     &__title {
         width: 90%;
         position: absolute;
-        top: 50%;
+        top: 50px;
         left: 50%;
         transform: translate(-50%, -50%);
-        color: white;
+        color: $color-primary;
         text-align: center;
         font-size: 30px;
         font-family: $font-family-bold;
@@ -37,4 +36,28 @@
             font-size: 20px;
         }
     }
+
+    &__icon {
+        animation: pulse 2s infinite;
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
+
+
+  
+  @keyframes pulse {
+    0% {
+      opacity: 0;
+    }
+    
+    50% {
+      opacity: 1;
+    }
+    
+    100% {
+        opacity: 0;
+    }
+  }

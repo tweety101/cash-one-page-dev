@@ -5,12 +5,19 @@
 
   &__grid {
     display: flex;
-    flex-wrap: wrap;
+    @media(max-width: $bp-medium) {
+      flex-direction: column;
+
+    }
   }
 
   &__left {
-    flex: 1 0 200px;
+    flex: 0 1 367px;
     margin-bottom: 20px;
+    @media(max-width: $bp-medium) {
+      flex: auto;
+
+    }
 
     h3 {
       color: $color-dark;
@@ -19,7 +26,12 @@
   }
 
   &__right {
-    flex: 1 1 250px
+    flex: 0 1 733px;
+
+    @media(max-width: $bp-medium) {
+      flex: auto;
+
+    }
 
   }
 
