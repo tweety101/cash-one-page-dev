@@ -21,6 +21,7 @@
     &__heading {
         color:  $color-secondary;
         font-size: 30px;
+        font-family: $font-family-bold;
         font-weight: 700;
         margin-left: -10px;
         margin-bottom: 20px;
@@ -113,6 +114,7 @@
     &__nav-item {
         list-style: none;
         font-size: 16px;
+        font-family: $font-family-bold;
         font-weight: 700;
         letter-spacing: .1em;
 
