@@ -16,7 +16,7 @@
     "watch:html": "onchange 'src/**/*.html' -- npm run copy:html",
     "optimize:img": "imagemin src/images/* --out-dir=dist/images",
     "watch:img": "onchange 'src/images/*' -- npm run optimize:img",
-    "build": "npm-run-all copy:static copy:html build:css optimize:img"
+    "build": "npm-run-all copy:html build:css optimize:img"
   },
   "browserslist": [
     "last 5 version",
