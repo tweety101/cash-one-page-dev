@@ -51,17 +51,16 @@
 
     </header>
 
-    <section class="hero">
+    <section id="hero" class="topsection hero">
         
                 <h1 class="hero__title">
-                        INNOVATIVE PRODUCTS AND SOLUTIONS FOR THE NEW HEMP REVOLUTION
+                        INNOVATIVE PRODUCTS <br class="hero__break"> AND SOLUTIONS FOR THE<br class="hero__break"> NEW HEMP REVOLUTION
                     </h1>
                     <img class="hero__icon" src="images/scroll_icon.svg" alt="Scroll Icon">
     
         
     </section>
-    <a class="anchorlink" id="about">&nbsp;</a>
-    <section class="section about">
+    <section id="about" class="anchorsection section about">
 
         <div class="container">
 
@@ -122,8 +121,7 @@
 
         </div>
     </section>
-    <a class="anchorlink" id="technology">&nbsp;</a>
-    <section class="section technology">
+    <section id="technology" class="anchorsection section technology">
         <div class="container">
 
             <h2 class="section__heading">
@@ -326,8 +324,7 @@
             </h2>
         </div>
     </section>
-    <a class="anchorlink" id="strategy">&nbsp;</a>
-    <section class="section strategy">
+    <section id="strategy" class="anchorsection section strategy">
         <div class="container">
             <h2 class="section__heading">
                 MARKET STRATEGY
@@ -395,8 +392,7 @@
         </div>
 
     </section>
-    <a class="anchorlink" id="brands">&nbsp;</a>
-    <section class="section brands">
+    <section id="brands" class="anchorsection section brands">
         <div class="container">
             <h2 class="section__heading">
                 SHOP OUR BRANDS
@@ -438,8 +434,7 @@
         </div>
 
     </section>
-    <a class="anchorlink" id="contact">&nbsp;</a>
-    <section class="section contact">
+    <section id="contact" class="anchorsection section contact">
         <div class="container">
             <h2 class="section__heading">
                 CONTACT US
@@ -503,24 +498,6 @@
     }
 });
 
-
-
-/*
-    window.onscroll = function changeNav() {
-        var header = document.querySelector('#header')
-        var scrollPosY = window.pageYOffset | document.body.scrollTop;
-        if (scrollPosY > 30) {
-            header.classList.add("scrolling")
-        }
-        else if (scrollPosY < 30) {
-            header.classList.remove("scrolling")
-
-        }
-
-
-    }
-
-*/
 </script>
 <script>
     $(document).ready(function () {
@@ -530,7 +507,7 @@
 
             // perform animated scrolling by getting top-position of target-element and set it as scroll target
             $('html, body').stop().animate({
-                scrollTop: $(target).offset().top
+                scrollTop: $(target).offset().top - 95
             }, 500, /*function () {
                 location.hash = target; //attach the hash (#jumptarget) to the pageurl
             }*/);
@@ -543,21 +520,25 @@
 
     $(window).scroll(function () {
         var scrollDistance = $(window).scrollTop();
-
         // Show/hide menu on scroll
         //if (scrollDistance >= 850) {
         //		$('nav').fadeIn("fast");
         //} else {
         //		$('nav').fadeOut("fast");
         //}
+        if ($('#hero').position().top <= scrollDistance + 100 ) {
+            $('.header__nav a.active').removeClass('active');
+        }
 
         // Assign active class to nav links while scolling
-        $('.section').each(function (i) {
-            if ($(this).position().top <= scrollDistance) {
+        $('.anchorsection').each(function (i) {
+            console.log($(this).position().top)
+            if ($(this).position().top <= scrollDistance + 100) {
                 $('.header__nav a.active').removeClass('active');
                 $('.header__nav a').eq(i).addClass('active');
             }
         });
+       
     }).scroll();
 </script>
 
