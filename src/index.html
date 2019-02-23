@@ -8,6 +8,10 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" type="text/css" href="static/MyFontsWebfontsKit.css">
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
     <title>Cash One-page</title>
 </head>
 
@@ -15,7 +19,7 @@
     <header id="header" class="header">
         <div class="container header__inner">
             <div class="header__logo">
-                <img src="images/cash-logo.png" alt="cash logo">
+
             </div>
             <input type="checkbox" class="mobile-nav__check" id="navi-toggle">
 
@@ -41,24 +45,23 @@
                     </li>
                 </ul>
             </nav>
-            
-
-           
-
         </div>
-        
+
 
 
     </header>
 
     <section class="hero">
-
-        <h1 class="hero__title">
-            INNOVATIVE PRODUCTS AND SOLUTIONS FOR THE NEW HEMP REVOLUTION
-        </h1>
-        <img class="hero__icon" src="images/scroll_icon.svg" alt="Scroll Icon">
+        
+                <h1 class="hero__title">
+                        INNOVATIVE PRODUCTS AND SOLUTIONS FOR THE NEW HEMP REVOLUTION
+                    </h1>
+                    <img class="hero__icon" src="images/scroll_icon.svg" alt="Scroll Icon">
+    
+        
     </section>
-    <section id="about" class="section about">
+    <a class="anchorlink" id="about">&nbsp;</a>
+    <section class="section about">
 
         <div class="container">
 
@@ -119,7 +122,8 @@
 
         </div>
     </section>
-    <section id="technology" class="section technology">
+    <a class="anchorlink" id="technology">&nbsp;</a>
+    <section class="section technology">
         <div class="container">
 
             <h2 class="section__heading">
@@ -322,7 +326,8 @@
             </h2>
         </div>
     </section>
-    <section id="strategy" class="section strategy">
+    <a class="anchorlink" id="strategy">&nbsp;</a>
+    <section class="section strategy">
         <div class="container">
             <h2 class="section__heading">
                 MARKET STRATEGY
@@ -390,7 +395,8 @@
         </div>
 
     </section>
-    <section id="brands" class="section brands">
+    <a class="anchorlink" id="brands">&nbsp;</a>
+    <section class="section brands">
         <div class="container">
             <h2 class="section__heading">
                 SHOP OUR BRANDS
@@ -432,7 +438,8 @@
         </div>
 
     </section>
-    <section id="contact" class="section contact">
+    <a class="anchorlink" id="contact">&nbsp;</a>
+    <section class="section contact">
         <div class="container">
             <h2 class="section__heading">
                 CONTACT US
@@ -486,7 +493,19 @@
     </footer>
 </body>
 <script>
+    $(window).scroll(function() {    
+    var scroll = $(window).scrollTop();
 
+    if (scroll >= 200) {
+        $("#header").addClass("scrolling");
+    } else {
+        $("#header").removeClass("scrolling");
+    }
+});
+
+
+
+/*
     window.onscroll = function changeNav() {
         var header = document.querySelector('#header')
         var scrollPosY = window.pageYOffset | document.body.scrollTop;
@@ -501,7 +520,45 @@
 
     }
 
+*/
+</script>
+<script>
+    $(document).ready(function () {
+        $("a[href*='#']").bind('click', function (e) {
+            e.preventDefault(); // prevent hard jump, the default behavior
+            var target = $(this).attr("href"); // Set the target as variable
 
+            // perform animated scrolling by getting top-position of target-element and set it as scroll target
+            $('html, body').stop().animate({
+                scrollTop: $(target).offset().top
+            }, 500, /*function () {
+                location.hash = target; //attach the hash (#jumptarget) to the pageurl
+            }*/);
+            
+            
+
+            return false;
+        });
+    });
+
+    $(window).scroll(function () {
+        var scrollDistance = $(window).scrollTop();
+
+        // Show/hide menu on scroll
+        //if (scrollDistance >= 850) {
+        //		$('nav').fadeIn("fast");
+        //} else {
+        //		$('nav').fadeOut("fast");
+        //}
+
+        // Assign active class to nav links while scolling
+        $('.section').each(function (i) {
+            if ($(this).position().top <= scrollDistance) {
+                $('.header__nav a.active').removeClass('active');
+                $('.header__nav a').eq(i).addClass('active');
+            }
+        });
+    }).scroll();
 </script>
 
 </html>

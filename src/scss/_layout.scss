@@ -52,8 +52,6 @@
 
 
 
-
-
 .header {
     height: 150px;
     display: flex;
@@ -81,9 +79,10 @@
 
         flex: 0 0 170px;
         height: 60%;
-        img {
-            height: 100%;
-        }
+        background-image: url('images/cash-logo.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        
     }
 
     &__nav {
@@ -128,7 +127,9 @@
 
     &__nav-link {
 
-
+        &.active {
+            color: $color-secondary;
+        }
     }
 
     &__check {
@@ -148,6 +149,10 @@
 
 .scrolling {
     height: 100px;
+}
+
+.scrolling .header__logo {
+    background-image: url('images/logo_icon.png')
 }
 
 .mobile-nav {
