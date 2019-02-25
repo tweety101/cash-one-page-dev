@@ -15,6 +15,7 @@
     display: flex;
     flex-direction: column;
     padding: 5px;
+    position: relative;
 
   }
 
@@ -46,8 +47,20 @@
   }
 
   &__item:hover &__image {
-    background-color: rgba($color: $color-primary, $alpha: 0.25);
+    background-color: rgba($color: $color-primary, $alpha: 0.50);
     border: none;
+  }
+
+  &__item:hover &__image::before {
+
+    content: "COMING SOON";
+    font-family: $font-family-bold;
+    color: #ffffff;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 25px;
   }
 
   &__title {
