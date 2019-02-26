@@ -16,4 +16,15 @@
       font-size: 20px;
     }
   }
+
+  &__name {
+    text-transform: uppercase;
+    font-family: $font-family;
+    font-size: 25px;
+    letter-spacing: .1em;
+    display: block;
+    @media (max-width: $bp-small) {
+      font-size: 18px;
+    }
+  }
 }

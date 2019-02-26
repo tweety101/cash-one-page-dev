@@ -51,7 +51,7 @@
     flex: 0 1 470px;
     padding-right: 56px;
     img {
-      width: 100%;
+      width: 80%;
       
       
     }
@@ -60,7 +60,7 @@
     }
     @media (max-width: $bp-small) {
       flex: auto;
-      padding: 0 50px 20px 50px;
+      //padding: 0 50px 20px 50px;
     }
 
   }
